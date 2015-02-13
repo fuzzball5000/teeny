@@ -4,11 +4,13 @@ Teeny hasher is a small Python script, designed to iterate through a directory s
 
 Usage:
 
-Teeny stores it’s configuration in an ini file, which must be readable by the same user which is executing Teeny.py:
+Teeny stores itâ€™s configuration in an ini file, which must be readable by the same user which is executing Teeny.py:
 
 [DEFAULT]
 output = /home/someuser **output path for XML file**
+
 path = /eg/path/I/care/about,/another/path/I/care/about **paths to scan CSV**
+
 include = jpeg,doc,class,exe **file types to include CSV, do not place file types in quotes**
 
 Teeny supports two methods of execution:
@@ -23,6 +25,6 @@ To compare an existing hash or hashes:
 
 $ python ./teeny.py --ini /path/to/teeny.ini --compare
 
-Teeny will, for each path defined in the ini, compare hashes of those paths to those stored in the XML file and if correct will generate an informational syslog message to the locally defined syslog server. If the generated and stored hashes for any given path differ, then a warning will be logged to syslog - It will also generate and store a Linux ls -alrtRL output in the XML file’s directory for the path in question to assist with finding which files may have been modified.
+Teeny will, for each path defined in the ini, compare hashes of those paths to those stored in the XML file and if correct will generate an informational syslog message to the locally defined syslog server. If the generated and stored hashes for any given path differ, then a warning will be logged to syslog - It will also generate and store a Linux ls -alrtRL output in the XML fileâ€™s directory for the path in question to assist with finding which files may have been modified.
 
 Teeny also checks for invalid paths, invalid XML files, or bad XML file paths. If any of these errors are encountered, Teeny will generate an error to the syslog. 
