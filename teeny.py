@@ -98,7 +98,8 @@ def generator(hostin,userin,pathin,chkin):
             except IOError:
                 logist ('Cannot write to output file','error')
                 return
-            outfile.close()
+            finally:
+                outfile.close()
         else:
             print 'Path not found '+item
     return()
